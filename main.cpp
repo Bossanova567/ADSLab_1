@@ -1,7 +1,10 @@
 #include "Tree.h"
 
+
 int main(){
-    CreateTree(NULL, 5, 1);
-    ShowTree(NULL, 0);
+    Node* start = new Node;
+    start = NULL;
+    CreateTree(start, 5, 1);
+    ShowTree(start, 0);
     return 0;
 }

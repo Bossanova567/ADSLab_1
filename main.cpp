@@ -3,8 +3,8 @@
 
 int main(){
     Node* start = new Node;
-    start = NULL;
-    CreateTree(start, 5, 1);
+    CreateTree(start, 12, 1);
     ShowTree(start, 0);
+    PrefixOrder(start,0);
     return 0;
 }

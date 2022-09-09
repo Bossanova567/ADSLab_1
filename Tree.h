@@ -17,5 +17,9 @@ struct Node
 
 void CreateTree(Node* pNode, int n, datatype data);
 void ShowTree(Node* pNode, int level);
+void PrefixOrder(Node* pNode, int level);
+void PostfixOrder(Node* pNode, int level);
+void InfixOrder(Node* pNode, int level);
+
 
 #endif //ADSLAB_1_TREE_H

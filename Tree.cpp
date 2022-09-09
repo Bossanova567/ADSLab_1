@@ -1,7 +1,7 @@
 #include "Tree.h"
-Node* root = NULL;
+
 void CreateTree(Node* pNode, int n, datatype data){ // n - кількість вузлів
-    if (n != 0)
+    if (n > 0)
     {
         pNode = new Node;
         pNode->key = data;
@@ -14,18 +14,33 @@ void CreateTree(Node* pNode, int n, datatype data){ // n - кількість в
 }
 
 void ShowTree(Node* pNode, int level){
-    pNode = root;
     if (pNode != NULL){
         ShowTree(pNode->left, level + 1);
-        cout << endl;
-        if (pNode == root)
-            cout << "Root->:  ";
-        else
-        {
-            for (int i = 0;i < level;i++)
-                cout << "       ";
-        }
+        cout<<endl;
+        for (int i = 0;i < level;i++)
+            cout << " ";
         cout << pNode->key;
         ShowTree(pNode->right, level + 1);
+    }
+}
+void PrefixOrder(Node* pNode, int level){
+    if (pNode != NULL) {
+        ShowTree(pNode, level);
+        PrefixOrder(pNode->left, ++level);
+        PrefixOrder(pNode->right, ++level);
+    }
+}
+void PostfixOrder(Node* pNode, int level){
+    if (pNode != NULL) {
+        PostfixOrder(pNode->left, ++level);
+        PostfixOrder(pNode->right, ++level);
+        ShowTree(pNode, level);
+    }
+}
+void InfixOrder(Node* pNode, int level){
+    if (pNode != NULL) {
+        InfixOrder(pNode->left, ++level);
+        ShowTree(pNode, level);
+        InfixOrder(pNode->right, ++level);
     }
 }

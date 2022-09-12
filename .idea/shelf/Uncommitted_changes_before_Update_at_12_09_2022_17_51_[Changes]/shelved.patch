@@ -1,0 +1,149 @@
+Index: Tree.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#include \"Tree.h\"\r\nNode* root = NULL;\r\nvoid CreateTree(Node* pNode, int n, datatype data){ // n - кількість вузлів\r\n    if (n != 0)\r\n    {\r\n        pNode = new Node;\r\n        pNode->key = data;\r\n        pNode->left = pNode->right = NULL;\r\n        CreateTree(pNode->left, n/2, data);\r\n        CreateTree(pNode->left, n-n/2-1, data);\r\n    }\r\n    else\r\n        pNode = NULL;\r\n}\r\n\r\nvoid ShowTree(Node* pNode, int level){\r\n    pNode = root;\r\n    if (pNode != NULL){\r\n        ShowTree(pNode->left, level + 1);\r\n        cout << endl;\r\n        if (pNode == root)\r\n            cout << \"Root->:  \";\r\n        else\r\n        {\r\n            for (int i = 0;i < level;i++)\r\n                cout << \"       \";\r\n        }\r\n        cout << pNode->key;\r\n        ShowTree(pNode->right, level + 1);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Tree.cpp b/Tree.cpp
+--- a/Tree.cpp	(revision 8025f28a0dbc11f9a436f53cfec059889afc0e57)
++++ b/Tree.cpp	(date 1662624851378)
+@@ -7,7 +7,7 @@
+         pNode->key = data;
+         pNode->left = pNode->right = NULL;
+         CreateTree(pNode->left, n/2, data);
+-        CreateTree(pNode->left, n-n/2-1, data);
++        CreateTree(pNode->right, n-n/2-1, data);
+     }
+     else
+         pNode = NULL;
+Index: main.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#include \"Tree.h\"\r\n\r\n\r\nint main(){\r\n    Node* start = new Node;\r\n    start = NULL;\r\n    CreateTree(start, 5, 1);\r\n    ShowTree(start, 0);\r\n    return 0;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.cpp b/main.cpp
+--- a/main.cpp	(revision 8025f28a0dbc11f9a436f53cfec059889afc0e57)
++++ b/main.cpp	(date 1662624374956)
+@@ -3,7 +3,6 @@
+ 
+ int main(){
+     Node* start = new Node;
+-    start = NULL;
+     CreateTree(start, 5, 1);
+     ShowTree(start, 0);
+     return 0;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"CMakeRunConfigurationManager\">\r\n    <generated>\r\n      <config projectName=\"ADSLab_1\" targetName=\"ADSLab_1\" />\r\n    </generated>\r\n  </component>\r\n  <component name=\"CMakeSettings\">\r\n    <configurations>\r\n      <configuration PROFILE_NAME=\"Debug\" ENABLED=\"true\" CONFIG_NAME=\"Debug\" />\r\n    </configurations>\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9139ebeb-233c-4cf4-8d3f-7ce4b146a91c\" name=\"Changes\" comment=\"in progress\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/main.cpp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.cpp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ClangdSettings\">\r\n    <option name=\"formatViaClangd\" value=\"false\" />\r\n  </component>\r\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"CMakeBuildProfile:Debug\" />\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectApplicationVersion\">\r\n    <option name=\"ide\" value=\"CLion\" />\r\n    <option name=\"majorVersion\" value=\"2022\" />\r\n    <option name=\"minorVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2EA2Joq9nCf7Yzty4zeKkr7zJat\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,\r\n    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,\r\n    &quot;cmake.loaded.for.project&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration default=\"true\" type=\"CLionExternalRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\">\r\n      <method v=\"2\">\r\n        <option name=\"CLION.EXTERNAL.BUILD\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ADSLab_1\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ADSLab_1\" TARGET_NAME=\"ADSLab_1\" CONFIG_NAME=\"Debug\" RUN_TARGET_PROJECT_NAME=\"ADSLab_1\" RUN_TARGET_NAME=\"ADSLab_1\">\r\n      <method v=\"2\">\r\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9139ebeb-233c-4cf4-8d3f-7ce4b146a91c\" name=\"Changes\" comment=\"\" />\r\n      <created>1662023998639</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1662023998639</updated>\r\n      <workItem from=\"1662024000526\" duration=\"9176000\" />\r\n      <workItem from=\"1662299533739\" duration=\"1390000\" />\r\n      <workItem from=\"1662300945518\" duration=\"3805000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"test\">\r\n      <created>1662300822390</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662300822390</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"in progress\">\r\n      <created>1662304139034</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662304139034</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"test\" />\r\n    <MESSAGE value=\"in progress\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"in progress\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8025f28a0dbc11f9a436f53cfec059889afc0e57)
++++ b/.idea/workspace.xml	(date 1662994196931)
+@@ -16,6 +16,16 @@
+   <component name="ChangeListManager">
+     <list default="true" id="9139ebeb-233c-4cf4-8d3f-7ce4b146a91c" name="Changes" comment="in progress">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree.cpp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ADSLab_1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ADSLab_1.exe" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ADSLab_1.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ADSLab_1.ilk" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ADSLab_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ADSLab_1.pdb" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ADSLab_1.dir/Tree.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ADSLab_1.dir/Tree.cpp.obj" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ADSLab_1.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ADSLab_1.dir/main.cpp.obj" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ADSLab_1.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ADSLab_1.dir/vc140.pdb" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -60,11 +70,6 @@
+   }
+ }</component>
+   <component name="RunManager">
+-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+-      <method v="2">
+-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+-      </method>
+-    </configuration>
+     <configuration name="ADSLab_1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ADSLab_1" TARGET_NAME="ADSLab_1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ADSLab_1" RUN_TARGET_NAME="ADSLab_1">
+       <method v="2">
+         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+@@ -81,7 +86,9 @@
+       <updated>1662023998639</updated>
+       <workItem from="1662024000526" duration="9176000" />
+       <workItem from="1662299533739" duration="1390000" />
+-      <workItem from="1662300945518" duration="3805000" />
++      <workItem from="1662300945518" duration="4093000" />
++      <workItem from="1662623961937" duration="934000" />
++      <workItem from="1662994193118" duration="4000" />
+     </task>
+     <task id="LOCAL-00001" summary="test">
+       <created>1662300822390</created>
+@@ -97,7 +104,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1662304139034</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="in progress">
++      <created>1662304977424</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1662304977424</updated>
++    </task>
++    <task id="LOCAL-00004" summary="in progress">
++      <created>1662304999398</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1662304999398</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: cmake-build-debug/Testing/Temporary/LastTest.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Start testing: Sep 04 18:18 O?ieyia?y (e?oi)\r\n----------------------------------------------------------\r\nEnd testing: Sep 04 18:18 O?ieyia?y (e?oi)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cmake-build-debug/Testing/Temporary/LastTest.log b/cmake-build-debug/Testing/Temporary/LastTest.log
+--- a/cmake-build-debug/Testing/Temporary/LastTest.log	(revision 8025f28a0dbc11f9a436f53cfec059889afc0e57)
++++ b/cmake-build-debug/Testing/Temporary/LastTest.log	(date 1662994196538)
+@@ -1,3 +1,3 @@
+-Start testing: Sep 04 18:18 O?ieyia?y (e?oi)
++Start testing: Sep 12 17:49 O?ieyia?y (e?oi)
+ ----------------------------------------------------------
+-End testing: Sep 04 18:18 O?ieyia?y (e?oi)
++End testing: Sep 12 17:49 O?ieyia?y (e?oi)
+Index: cmake-build-debug/.ninja_log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># ninja log v5\r\n0\t891\t6840057645783518\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n5\t919\t6840057646064735\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n6\t444\t6840059669508302\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n4\t367\t6840064202957444\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n1\t447\t6840067464758467\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n1\t486\t6840067790075365\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n5\t490\t6840067790115401\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n1\t446\t6840068296909161\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n6\t457\t6840068297039278\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n457\t1254\t6840068304236726\tADSLab_1.exe\t9f856eeb359d3061\r\n0\t507\t6840070014015081\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n5\t516\t6840070014115171\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n0\t463\t6840070600876003\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n4\t372\t6840070790754034\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n1\t379\t6840070790824097\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n379\t606\t6840070792132555\tADSLab_1.exe\t9f856eeb359d3061\r\n1\t430\t6840074817436054\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n430\t1015\t6840074822008083\tADSLab_1.exe\t9f856eeb359d3061\r\n4\t491\t6840075301199361\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n0\t493\t6840075301229387\tCMakeFiles/ADSLab_1.dir/Tree.cpp.obj\t81c06a1a647539b8\r\n0\t445\t6840077708878691\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n0\t318\t6840077839708871\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n318\t552\t6840077841358084\tADSLab_1.exe\t9f856eeb359d3061\r\n1\t432\t6840079330588525\tCMakeFiles/ADSLab_1.dir/main.cpp.obj\t5a79b89435e4d995\r\n433\t755\t6840079332907708\tADSLab_1.exe\t9f856eeb359d3061\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cmake-build-debug/.ninja_log b/cmake-build-debug/.ninja_log
+--- a/cmake-build-debug/.ninja_log	(revision 8025f28a0dbc11f9a436f53cfec059889afc0e57)
++++ b/cmake-build-debug/.ninja_log	(date 1662624832927)
+@@ -24,3 +24,12 @@
+ 318	552	6840077841358084	ADSLab_1.exe	9f856eeb359d3061
+ 1	432	6840079330588525	CMakeFiles/ADSLab_1.dir/main.cpp.obj	5a79b89435e4d995
+ 433	755	6840079332907708	ADSLab_1.exe	9f856eeb359d3061
++1	1740	6843275777606764	CMakeFiles/ADSLab_1.dir/main.cpp.obj	5a79b89435e4d995
++1740	2880	6843275785930582	ADSLab_1.exe	9f856eeb359d3061
++0	499	6843276327499967	CMakeFiles/ADSLab_1.dir/Tree.cpp.obj	81c06a1a647539b8
++499	693	6843276328878149	ADSLab_1.exe	9f856eeb359d3061
++0	539	6843277871917393	CMakeFiles/ADSLab_1.dir/main.cpp.obj	5a79b89435e4d995
++3	542	6843277871937412	CMakeFiles/ADSLab_1.dir/Tree.cpp.obj	81c06a1a647539b8
++542	756	6843277873518851	ADSLab_1.exe	9f856eeb359d3061
++1	462	6843280327398339	CMakeFiles/ADSLab_1.dir/Tree.cpp.obj	81c06a1a647539b8
++463	644	6843280328659488	ADSLab_1.exe	9f856eeb359d3061

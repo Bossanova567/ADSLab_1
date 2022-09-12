@@ -1,0 +1,39 @@
+<changelist name="Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]" date="1662994320637" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12.09.2022 17:51 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/.ninja_deps" />
+    <option name="AFTER_PATH" value="cmake-build-debug/.ninja_deps" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]/.ninja_deps" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/ADSLab_1.dir/main.cpp.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/ADSLab_1.dir/main.cpp.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]/main.cpp.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/ADSLab_1.exe" />
+    <option name="AFTER_PATH" value="cmake-build-debug/ADSLab_1.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]/ADSLab_1.exe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/ADSLab_1.dir/vc140.pdb" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/ADSLab_1.dir/vc140.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]/vc140.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/ADSLab_1.dir/Tree.cpp.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/ADSLab_1.dir/Tree.cpp.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]/Tree.cpp.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/ADSLab_1.pdb" />
+    <option name="AFTER_PATH" value="cmake-build-debug/ADSLab_1.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]/ADSLab_1.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/ADSLab_1.ilk" />
+    <option name="AFTER_PATH" value="cmake-build-debug/ADSLab_1.ilk" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_09_2022_17_51_[Changes]/ADSLab_1.ilk" />
+  </binary>
+</changelist>

@@ -11,11 +11,11 @@ struct Node
 {
     datatype key; // Інформаційне поле (ключ) вузла
     Node* parent; // Вказівник на батьківський вузол
-    Node* left; // Вказівник на лівого сина
-    Node* right; // Вказівник на правого сина
+    struct Node* left; // Вказівник на лівого сина
+    struct Node* right; // Вказівник на правого сина
 };
 
-void CreateTree(Node* pNode, int n, datatype data);
+Node* CreateTree(int n, datatype data);
 void ShowTree(Node* pNode, int level);
 void PrefixOrder(Node* pNode, int level);
 void PostfixOrder(Node* pNode, int level);
